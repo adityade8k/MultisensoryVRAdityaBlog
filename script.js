@@ -134,7 +134,7 @@ function renderPost(post) {
 
   const label = document.createElement("p");
   label.className = "post-detail__label";
-  label.textContent = "Field note";
+  label.textContent = "Blog post";
 
   const date = document.createElement("time");
   date.className = "post-detail__date";
@@ -217,14 +217,14 @@ async function loadPosts() {
     postCount.textContent = posts.length;
 
     if (!posts.length) {
-      grid.innerHTML = '<p class="status-message">No field notes yet. Add your first entry to posts.json.</p>';
+      grid.innerHTML = '<p class="status-message">No blog posts yet. Add your first entry to posts.json.</p>';
       return;
     }
 
     posts.forEach((post, index) => grid.append(renderCard(post, index)));
   } catch (error) {
     console.error("Could not load posts:", error);
-    grid.innerHTML = '<p class="status-message">The field notes could not be loaded. Run the site from a local server or publish it to GitHub Pages.</p>';
+    grid.innerHTML = '<p class="status-message">The blog posts could not be loaded. Run the site from a local server or publish it to GitHub Pages.</p>';
   }
 }
 

@@ -2,100 +2,94 @@
   "posts": [
     {
       "id": "week-01",
-      "title": "Week 1 — Introduction to Multisensory VR",
+      "title": "Week 1 — Learning Unreal Through the Backrooms",
       "date": "2026-09-02",
       "coverImage": "assets/week1/week1.1.gif",
-      "preview": "First observations on presence, perception, and what changes when a virtual world begins to engage more than sight and sound.",
+      "preview": "For my first time using Unreal Engine 5, I moved away from following the tutorial step-by-step and instead explored materials, Blueprints, C++, and procedural maze generation through a simple Backrooms-inspired environment.",
       "content": [
         {
           "type": "paragraph",
-          "text": "This first week introduced the central question of the course: what makes a virtual experience feel embodied? I began by paying attention to the gap between seeing an environment and feeling located inside it."
-        },
-        {
-          "type": "heading",
-          "text": "Experiment"
+          "text": "For our first assignment, we were asked to explore a video tutorial introducing us to Unreal Engine. I watched some of it to understand the basics, but I have never really enjoyed learning by following video tutorials step-by-step. I usually understand a tool better when I have something I actually want to make and can figure things out as I go."
         },
         {
           "type": "paragraph",
-          "text": "I tested a simple scene while changing one sensory cue at a time—spatial sound, controller vibration, and small shifts in visual scale. Even subtle feedback changed how I moved and where I directed my attention."
+          "text": "So, for my first time using Unreal Engine 5, I decided to build a small Backrooms-inspired environment. I was mainly interested in exploring two things: how to construct an environment in Unreal, and what kinds of scripting and procedural systems I could create inside it. The second part was especially interesting to me because I enjoy working with systems and code."
         },
         {
           "type": "image",
           "src": "assets/week1/week1.1.gif",
-          "alt": "Animated documentation from the Week 1 VR experiment",
-          "caption": "Week 1 experiment documentation."
-        },
-        {
-          "type": "quote",
-          "text": "Presence is not only something we see; it is something the body continually negotiates."
-        },
-        {
-          "type": "paragraph",
-          "text": "My main takeaway was that coherence matters more than intensity. A quiet vibration at exactly the right moment can be more convincing than a dramatic effect that is disconnected from the action."
-        },
-        {
-          "type": "link",
-          "text": "Course resources",
-          "url": "https://itp.nyu.edu/"
-        }
-      ]
-    },
-    {
-      "id": "week-02",
-      "title": "Week 2 — Backrooms Prototype",
-      "date": "2026-09-09",
-      "coverImage": "assets/week2/placeholder.jpg",
-      "preview": "Building an uneasy liminal space through repetition, fluorescent hum, uncertain scale, and restrained haptic feedback.",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "This week I built a small Backrooms-inspired prototype to explore how sensory repetition can create tension. The scene uses nearly identical corridors, ambiguous landmarks, and a sound bed that never quite settles."
+          "alt": "Early Backrooms environment created in Unreal Engine 5",
+          "caption": "An early version of the Backrooms environment."
         },
         {
           "type": "heading",
-          "text": "Concept"
+          "text": "Starting with Materials"
         },
         {
           "type": "paragraph",
-          "text": "The experience is less about being chased and more about anticipating that something might happen. I wanted the architecture itself to feel unreliable, using familiar office materials in an arrangement that resists orientation."
+          "text": "I started with some very basic Unreal workflows. First, I created a master material that I could use as the base for other materials in the environment. From that, I could quickly create variations instead of rebuilding every material from scratch."
+        },
+        {
+          "type": "paragraph",
+          "text": "This was a useful introduction to the way Unreal organizes materials and parameters. Even in a simple environment like this, having a reusable material system made it much easier to experiment with how the space looked."
         },
         {
           "type": "image",
-          "src": "assets/week2/placeholder.jpg",
-          "alt": "Abstract placeholder for the Backrooms prototype",
-          "caption": "Early corridor study. Replace with a prototype screenshot."
+          "src": "assets/week1/week1.2.gif",
+          "alt": "Material and environment experimentation in Unreal Engine",
+          "caption": "Experimenting with the visual structure of the environment."
         },
         {
           "type": "heading",
-          "text": "Development"
+          "text": "Building with Blueprints"
         },
         {
           "type": "paragraph",
-          "text": "I started with a modular wall and ceiling system, then introduced slight inconsistencies in room proportions. A low electrical hum is spatialized around the ceiling lights. Brief controller pulses occur near visual glitches, connecting the body's sense of touch to the environment's instability."
+          "text": "Next, I started creating Blueprints for the different pieces that made up the environment. I created separate systems for the walls, ceiling, carpet, and fluorescent lights. This helped me understand how Unreal treats reusable objects and how individual components can be assembled into a larger environment."
+        },
+        {
+          "type": "paragraph",
+          "text": "At first I also tried creating more of the maze logic using Blueprints. As the system became more complicated, though, the node wiring started becoming difficult for me to follow. I found myself spending more time connecting and organizing nodes than thinking about the actual logic of the system."
+        },
+        {
+          "type": "image",
+          "src": "assets/week1/week1.3.gif",
+          "alt": "Procedurally generated Backrooms maze in Unreal Engine",
+          "caption": "Developing the modular environment and maze structure."
         },
         {
           "type": "heading",
-          "text": "What Worked"
+          "text": "Switching to C++"
         },
         {
           "type": "paragraph",
-          "text": "The restrained audio created more tension than the louder tests. Players also slowed down when rooms differed only slightly, suggesting that subtle variation encouraged careful observation."
+          "text": "Because of that, I decided to switch to C++ for the procedural maze generation. This immediately felt much more natural to me. Instead of manually wiring together a large graph, I could describe the rules of the maze directly in code and let Unreal generate the environment from those rules."
+        },
+        {
+          "type": "paragraph",
+          "text": "Once the maze generation started working, the project became much more interesting. The same relatively small collection of walls, ceilings, floors, and lights could create a space with a surprising amount of variation. It began to feel less like a scene I had manually constructed and more like a system capable of producing different versions of the environment."
+        },
+        {
+          "type": "image",
+          "src": "assets/week1/week1.4.gif",
+          "alt": "Final procedural Backrooms environment running in Unreal Engine 5",
+          "caption": "The procedural maze generating a larger Backrooms-like environment."
         },
         {
           "type": "heading",
-          "text": "What Didn't Work"
+          "text": "What I Learned"
         },
         {
           "type": "paragraph",
-          "text": "The initial haptic effect was too frequent and quickly became predictable. Some corridor turns were also tight enough to produce discomfort, so the spatial layout needs another pass."
-        },
-        {
-          "type": "heading",
-          "text": "Next Steps"
+          "text": "There is still a lot I would improve. The textures, lighting, color, and overall mood could all be pushed much further. Working on this made me realize how much an environment depends on these subtle details. It is not necessarily about filling a space with lots of props; small changes in texture, light, repetition, scale, and atmosphere can completely change how the space feels."
         },
         {
           "type": "paragraph",
-          "text": "Next I will test longer quiet intervals, widen the circulation paths, and add one environmental interaction that changes the soundscape without explaining exactly what happened."
+          "text": "For a first experiment in Unreal, though, I liked that I was able to make something relatively simple that still produced an interesting result. More importantly, I got to move through several different parts of the Unreal workflow—materials, Blueprints, reusable environment pieces, and C++ scripting—while building one small project."
+        },
+        {
+          "type": "paragraph",
+          "text": "Rather than trying to completely understand Unreal before making anything, this felt like a much better way for me to begin learning it: start with an idea, build until I hit a problem, and then learn whatever part of the tool I need in order to solve it."
         }
       ]
     }
