@@ -1,0 +1,103 @@
+{
+  "posts": [
+    {
+      "id": "week-01",
+      "title": "Week 1 — Introduction to Multisensory VR",
+      "date": "2026-09-02",
+      "coverImage": "assets/week1/week1.1.gif",
+      "preview": "First observations on presence, perception, and what changes when a virtual world begins to engage more than sight and sound.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "This first week introduced the central question of the course: what makes a virtual experience feel embodied? I began by paying attention to the gap between seeing an environment and feeling located inside it."
+        },
+        {
+          "type": "heading",
+          "text": "Experiment"
+        },
+        {
+          "type": "paragraph",
+          "text": "I tested a simple scene while changing one sensory cue at a time—spatial sound, controller vibration, and small shifts in visual scale. Even subtle feedback changed how I moved and where I directed my attention."
+        },
+        {
+          "type": "image",
+          "src": "assets/week1/week1.1.gif",
+          "alt": "Animated documentation from the Week 1 VR experiment",
+          "caption": "Week 1 experiment documentation."
+        },
+        {
+          "type": "quote",
+          "text": "Presence is not only something we see; it is something the body continually negotiates."
+        },
+        {
+          "type": "paragraph",
+          "text": "My main takeaway was that coherence matters more than intensity. A quiet vibration at exactly the right moment can be more convincing than a dramatic effect that is disconnected from the action."
+        },
+        {
+          "type": "link",
+          "text": "Course resources",
+          "url": "https://itp.nyu.edu/"
+        }
+      ]
+    },
+    {
+      "id": "week-02",
+      "title": "Week 2 — Backrooms Prototype",
+      "date": "2026-09-09",
+      "coverImage": "assets/week2/placeholder.jpg",
+      "preview": "Building an uneasy liminal space through repetition, fluorescent hum, uncertain scale, and restrained haptic feedback.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "This week I built a small Backrooms-inspired prototype to explore how sensory repetition can create tension. The scene uses nearly identical corridors, ambiguous landmarks, and a sound bed that never quite settles."
+        },
+        {
+          "type": "heading",
+          "text": "Concept"
+        },
+        {
+          "type": "paragraph",
+          "text": "The experience is less about being chased and more about anticipating that something might happen. I wanted the architecture itself to feel unreliable, using familiar office materials in an arrangement that resists orientation."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/placeholder.jpg",
+          "alt": "Abstract placeholder for the Backrooms prototype",
+          "caption": "Early corridor study. Replace with a prototype screenshot."
+        },
+        {
+          "type": "heading",
+          "text": "Development"
+        },
+        {
+          "type": "paragraph",
+          "text": "I started with a modular wall and ceiling system, then introduced slight inconsistencies in room proportions. A low electrical hum is spatialized around the ceiling lights. Brief controller pulses occur near visual glitches, connecting the body's sense of touch to the environment's instability."
+        },
+        {
+          "type": "heading",
+          "text": "What Worked"
+        },
+        {
+          "type": "paragraph",
+          "text": "The restrained audio created more tension than the louder tests. Players also slowed down when rooms differed only slightly, suggesting that subtle variation encouraged careful observation."
+        },
+        {
+          "type": "heading",
+          "text": "What Didn't Work"
+        },
+        {
+          "type": "paragraph",
+          "text": "The initial haptic effect was too frequent and quickly became predictable. Some corridor turns were also tight enough to produce discomfort, so the spatial layout needs another pass."
+        },
+        {
+          "type": "heading",
+          "text": "Next Steps"
+        },
+        {
+          "type": "paragraph",
+          "text": "Next I will test longer quiet intervals, widen the circulation paths, and add one environmental interaction that changes the soundscape without explaining exactly what happened."
+        }
+      ]
+    }
+  ]
+}

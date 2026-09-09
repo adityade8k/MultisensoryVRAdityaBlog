@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aditya De's weekly documentation for Multisensory VR.">
+    <title>Multisensory VR — Weekly Process Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Multisensory VR home">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span>MVR / 26</span>
+      </a>
+
+      <div class="site-header__title" id="top">
+        <p class="eyebrow">Process, experiments &amp; observations</p>
+        <h1><span>Multi</span><span>sensory</span><br><span>VR</span></h1>
+      </div>
+
+      <div class="site-header__meta">
+        <p>Weekly Process Blog</p>
+        <p>Aditya De</p>
+        <p>Fall 2026</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="archive" aria-labelledby="archive-title">
+        <div class="archive__heading">
+          <h2 id="archive-title">Field Notes</h2>
+          <p><span id="post-count">—</span> entries</p>
+        </div>
+
+        <div class="posts-grid" id="posts-grid" aria-live="polite">
+          <p class="status-message">Loading field notes…</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Multisensory VR / Weekly documentation</p>
+      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </footer>
+
+    <dialog class="post-modal" id="post-modal" aria-labelledby="modal-title">
+      <div class="post-modal__panel">
+        <button class="modal-close" id="modal-close" type="button" aria-label="Close post">
+          <span>Close</span>
+          <span aria-hidden="true">×</span>
+        </button>
+        <article class="post-detail" id="post-detail"></article>
+      </div>
+    </dialog>
+
+    <template id="post-card-template">
+      <article class="post-card">
+        <button class="post-card__button" type="button">
+          <div class="post-card__image-wrap">
+            <img class="post-card__image" src="" alt="">
+            <span class="post-card__number"></span>
+          </div>
+          <div class="post-card__body">
+            <time class="post-card__date"></time>
+            <h3 class="post-card__title"></h3>
+            <p class="post-card__preview"></p>
+            <span class="post-card__more">Read more <span aria-hidden="true">↗</span></span>
+          </div>
+        </button>
+      </article>
+    </template>
+  </body>
+</html>
