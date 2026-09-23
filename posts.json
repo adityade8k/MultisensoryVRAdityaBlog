@@ -30,8 +30,24 @@
           "text": "I started with some very basic Unreal workflows. First, I created a master material that I could use as the base for other materials in the environment. From that, I could quickly create variations instead of rebuilding every material from scratch."
         },
         {
+          "type": "image",
+          "src": "assets/week1/Screenshot 2026-09-23 at 1.31.00 PM.png",
+          "alt": "M_Backrooms_Master material graph connecting base color, normal, and roughness textures with texture size, tint, and ambient glow parameters",
+          "caption": "The master material: a reusable setup for textures, scale, tint, roughness, and ambient glow."
+        },
+        {
           "type": "paragraph",
           "text": "This was a useful introduction to the way Unreal organizes materials and parameters. Even in a simple environment like this, having a reusable material system made it much easier to experiment with how the space looked."
+        },
+        {
+          "type": "paragraph",
+          "text": "For the fluorescent panels, I made a separate, much simpler material. I multiplied a light color by an emissive strength parameter and connected the result to Emissive Color. This gave me controls for the color and intensity of the panel's glow."
+        },
+        {
+          "type": "image",
+          "src": "assets/week1/Screenshot 2026-09-23 at 1.31.23 PM.png",
+          "alt": "M_FluorescentPanel material graph multiplying LightColor by EmissiveStrength and connecting the result to Emissive Color",
+          "caption": "The fluorescent panel material, with parameters for light color and emissive strength."
         },
         {
           "type": "image",
@@ -45,11 +61,13 @@
         },
         {
           "type": "paragraph",
-          "text": "Next, I started creating Blueprints for the different pieces that made up the environment. I created separate systems for the walls, ceiling, carpet, and fluorescent lights. This helped me understand how Unreal treats reusable objects and how individual components can be assembled into a larger environment."
+          "text": "Next, I started creating Blueprints for the pieces that made up the environment. The Backrooms cell brought together a floor, ceiling, and four walls. Its Construction Script used a boolean for each wall to control visibility and collision, so the same cell could have different openings. I also made a separate Blueprint for the fluorescent panels. This helped me understand how reusable components could be assembled into a larger environment."
         },
         {
-          "type": "paragraph",
-          "text": "At first I also tried creating more of the maze logic using Blueprints. As the system became more complicated, though, the node wiring started becoming difficult for me to follow. I found myself spending more time connecting and organizing nodes than thinking about the actual logic of the system."
+          "type": "image",
+          "src": "assets/week1/Screenshot 2026-09-23 at 1.34.31 PM.png",
+          "alt": "BP_BackroomsCell Construction Script using branches to toggle visibility and collision for the north, south, east, and west walls",
+          "caption": "The reusable Backrooms cell Blueprint, with controls for which walls are present."
         },
         {
           "type": "image",
@@ -58,12 +76,22 @@
           "caption": "Developing the modular environment and maze structure."
         },
         {
+          "type": "paragraph",
+          "text": "I initially tried to generate the maze using Blueprint nodes too. I used nested loops to place cells on a grid, a random stream to make wall choices, and spawn nodes for the cells and fluorescent panels. But I couldn't get the generation working the way I wanted. As the graph grew, the wiring became harder for me to follow, and I was spending more time tracing connections than working through the maze logic."
+        },
+        {
+          "type": "image",
+          "src": "assets/week1/Screenshot 2026-09-23 at 1.32.10 PM.png",
+          "alt": "Blueprint maze-generation graph with nested grid loops, random wall choices, and nodes for spawning Backrooms cells and fluorescent panels",
+          "caption": "My attempt at generating the maze with Blueprint nodes. I couldn't get this working as intended, which led me to try code."
+        },
+        {
           "type": "heading",
           "text": "Switching to C++"
         },
         {
           "type": "paragraph",
-          "text": "Because of that, I decided to switch to C++ for the procedural maze generation. This immediately felt much more natural to me. Instead of manually wiring together a large graph, I could describe the rules of the maze directly in code and let Unreal generate the environment from those rules."
+          "text": "Since I wasn't getting the node-based generator to work, I decided to switch to C++ for the procedural maze generation. Working in code felt much more natural to me: I could describe the rules of the maze directly and follow the logic more easily. The material graphs and reusable environment pieces were still part of the project; it was the generation logic that I moved into code."
         },
         {
           "type": "paragraph",
