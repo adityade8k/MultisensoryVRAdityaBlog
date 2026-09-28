@@ -126,11 +126,11 @@
       "title": "Week 2 — Making the Backrooms Feel Unstable",
       "date": "2026-09-28",
       "coverImage": "assets/week2/FinalResult1.gif",
-      "preview": "This week, I developed three conditions for the Backrooms maze: normal, worn, and heavily degraded. Through material experiments, ChatGPT references, an iterative MCP workflow, and a shrine generated in Tripo, I started exploring how the same space could move between an ordinary office and something much more disturbing.",
+      "preview": "This week, I focused on using an MCP connection to make and refine changes in Unreal while developing three conditions for the Backrooms maze: normal, worn, and heavily degraded. Through material experiments, ChatGPT references, and a shrine generated in Tripo, I explored how the same space could feel ordinary one moment and disturbing the next.",
       "content": [
         {
           "type": "paragraph",
-          "text": "Last week, I built a basic Backrooms environment and got the procedural maze generation working. This week, I wanted to spend more time on how the space actually felt. I had the structure of a maze, but the rooms needed more variation, and I wanted that variation to become part of the idea behind the game."
+          "text": "Last week, I built a basic Backrooms environment and got the procedural maze generation working. This week, I focused on using an MCP connection to make and refine changes in Unreal, while spending more time on how the space actually felt. I had the structure of a maze, but the rooms needed more variation, and I wanted that variation to become part of the idea behind the game."
         },
         {
           "type": "heading",
