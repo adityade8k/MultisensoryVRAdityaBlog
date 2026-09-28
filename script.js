@@ -195,7 +195,9 @@ function renderCard(post, index) {
 
   date.dateTime = post.date;
   date.textContent = formatDate(post.date);
-  fragment.querySelector(".post-card__number").textContent = String(index + 1).padStart(2, "0");
+  const weekNumber = Number(post.id.match(/\d+$/)?.[0]);
+  const tileNumber = Number.isInteger(weekNumber) && weekNumber > 0 ? weekNumber : index + 1;
+  fragment.querySelector(".post-card__number").textContent = String(tileNumber).padStart(2, "0");
   fragment.querySelector(".post-card__title").textContent = post.title;
   fragment.querySelector(".post-card__preview").textContent = post.preview || "";
   button.setAttribute("aria-label", `Read ${post.title}`);

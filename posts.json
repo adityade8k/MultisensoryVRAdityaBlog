@@ -120,6 +120,283 @@
           "text": "Rather than trying to completely understand Unreal before making anything, this felt like a much better way for me to begin learning it: start with an idea, build until I hit a problem, and then learn whatever part of the tool I need in order to solve it."
         }
       ]
+    },
+    {
+      "id": "week-02",
+      "title": "Week 2 — Making the Backrooms Feel Unstable",
+      "date": "2026-09-28",
+      "coverImage": "assets/week2/FinalResult1.gif",
+      "preview": "This week, I developed three conditions for the Backrooms maze: normal, worn, and heavily degraded. Through material experiments, ChatGPT references, an iterative MCP workflow, and a shrine generated in Tripo, I started exploring how the same space could move between an ordinary office and something much more disturbing.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Last week, I built a basic Backrooms environment and got the procedural maze generation working. This week, I wanted to spend more time on how the space actually felt. I had the structure of a maze, but the rooms needed more variation, and I wanted that variation to become part of the idea behind the game."
+        },
+        {
+          "type": "heading",
+          "text": "Three Versions of the Same Space"
+        },
+        {
+          "type": "paragraph",
+          "text": "The idea is to have three broad types of rooms: normal, slightly messed up, and very messed up. The normal rooms are fairly ordinary office spaces, with repetitive wallpaper, carpet, ceiling panels, and fluorescent lights. The slightly messed-up rooms have stains, scuffed and peeling walls, damaged ceiling panels, and flickering lights. The most extreme rooms push this much further, with gore, bones, hanging intestines, a face emerging from a wall, and a shrine surrounded by candles."
+        },
+        {
+          "type": "paragraph",
+          "text": "I am interested in how unpredictable the transitions between these conditions can feel. You might walk through a room that seems completely normal, turn a corner into something disturbing, and then find yourself back in an ordinary office corridor. I want that return to normal to feel uncomfortable too. Once you have seen what can exist in this space, it becomes harder to trust a room just because it looks harmless."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is starting to become my own fictional extension of the Backrooms. Eventually, I want a monster to hunt the player through the maze, but I will get into that part of the concept in the next post. For now, I am working on the environment and the sense of paranoia that can come from moving through it."
+        },
+        {
+          "type": "heading",
+          "text": "Starting with Stains"
+        },
+        {
+          "type": "paragraph",
+          "text": "I started with a fairly simple version of degradation: adding stains and wear to the walls. I wanted to see how much I could change the atmosphere while keeping the basic room recognizable. The first attempt gave me something to react to, but the overall result was looking greenish and dull."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/degradation attempt1.png",
+          "alt": "First wall-degradation experiment in the Unreal Backrooms environment",
+          "caption": "Degradation attempt 1: starting with stains and basic wear on the walls."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/Wibecheck reference.png",
+          "alt": "Backrooms scene used to check the overall colour and lighting of the early experiment",
+          "caption": "A vibe check of the early result. The colour and lighting still felt dull."
+        },
+        {
+          "type": "paragraph",
+          "text": "I tried making a few more adjustments, but I was still not getting the result I wanted. There was visible damage, yet the room as a whole did not feel convincing. This became a recurring part of the process: a change could add more detail without necessarily improving the atmosphere."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/degradation atteempt 2.1.png",
+          "alt": "Follow-up degradation experiment with more visible wall stains and wear",
+          "caption": "Degradation attempt 2.1: more adjustments, but the overall look was still not quite working."
+        },
+        {
+          "type": "heading",
+          "text": "Finding the Right Colour and Atmosphere"
+        },
+        {
+          "type": "paragraph",
+          "text": "I then looked at an image of the Backrooms from the internet. What stood out to me was the relationship between the surfaces: the floor looked yellower, while the walls had more of a green tint. That gave me a more specific direction for the colour of my own environment. I needed to consider the floor, walls, ceiling, and lighting together."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/Interneet reference.png",
+          "alt": "Backrooms reference image with yellow flooring, greenish walls, and fluorescent ceiling lights",
+          "caption": "The internet reference I used to reconsider the colour balance, particularly the yellower floor and greener walls."
+        },
+        {
+          "type": "paragraph",
+          "text": "The next few attempts explored different degrees of damage and darkness. I was trying to establish a range of room conditions while keeping them connected to the same underlying space. The material colours, visible wear, and lighting all affected how far a room seemed to have deteriorated."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/degradaton attemtp2.png",
+          "alt": "Second degradation experiment in the Unreal editor",
+          "caption": "Degradation attempt 2: continuing to work through the colour and surface treatment."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/degradatin attampt 3.png",
+          "alt": "Backrooms room with heavier stains and more extensive surface damage",
+          "caption": "Degradation attempt 3: pushing the room towards a more heavily damaged condition."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/degradation attempt 3.1.png",
+          "alt": "Darker variation of the degraded Backrooms environment",
+          "caption": "Degradation attempt 3.1: testing how the damaged surfaces read in a darker room."
+        },
+        {
+          "type": "heading",
+          "text": "Making the References More Specific"
+        },
+        {
+          "type": "paragraph",
+          "text": "At this point, I wanted a clearer visual target for the different rooms. I asked ChatGPT to generate a reference mood board with isometric views of the variations I was imagining. These explored the range from ordinary office rooms to worn spaces and the more extreme horror rooms. Seeing them together helped me think about the differences between the room types."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/chatgpt isometric.png",
+          "alt": "ChatGPT-generated mood board showing isometric concepts for several Backrooms room conditions",
+          "caption": "A ChatGPT-generated reference mood board for the room variations. These are concept images, not screenshots from Unreal."
+        },
+        {
+          "type": "paragraph",
+          "text": "I also generated more focused references for the walls and gore. The room views were useful for the overall atmosphere, but I needed closer references to explain what individual details should look like: how wallpaper peels away from a wall, how the gore sits against a surface, and how these elements relate to the rest of the room."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/Chatgptgorereference.png",
+          "alt": "ChatGPT-generated concept image for a heavily degraded Backrooms room with gore",
+          "caption": "A generated reference for the appearance and placement of gore in the more extreme rooms."
+        },
+        {
+          "type": "heading",
+          "text": "Getting the MCP Workflow to Work"
+        },
+        {
+          "type": "paragraph",
+          "text": "A major part of this week's process was setting up the MCP connection and figuring out how to use it to make changes in Unreal. My workflow became a repeated cycle of describing a change, checking the result in the scene, identifying what felt wrong, and revising the instructions. The references gave me something concrete to compare the results against."
+        },
+        {
+          "type": "paragraph",
+          "text": "The first attempts at peeling wallpaper and gore did not work very well. The peeling wallpaper was especially unconvincing: the shapes on the wall did not read as wallpaper separating from the surface. I had to get more specific about the appearance I wanted and revisit the references."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/Badmcptakeonwalspeeling.png",
+          "alt": "Early MCP-generated peeling-wallpaper attempt with raised shapes on the wall",
+          "caption": "The first peeling-wallpaper result. It needed more work to read as a layer coming away from the wall."
+        },
+        {
+          "type": "paragraph",
+          "text": "The gore also needed several passes. One version was much too shiny, which made the material feel wrong even when the general placement was closer to what I wanted. I asked for a more matte appearance and kept refining the forms and surface treatment."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/gore too shny was fixed.png",
+          "alt": "An intermediate gore treatment with overly glossy surfaces beneath a fluorescent light",
+          "caption": "An intermediate gore result that was too shiny. The surface appearance was revised in later passes."
+        },
+        {
+          "type": "paragraph",
+          "text": "I went back to ChatGPT to create more detailed visual references for the gore and peeling walls. This made the feedback easier to explain. I could point to a particular edge, surface, or shape and use that to guide the next attempt. I also used a separate reference for the face emerging from the wall."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/ChatGPTDetailFor gore and WallPpaer peeling.png",
+          "alt": "ChatGPT-generated detail reference showing peeling wallpaper and gore",
+          "caption": "A more detailed generated reference used to guide another pass on the peeling wallpaper and gore."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/facereference.jpg",
+          "alt": "Reference image of a face appearing to push out through a Backrooms wall",
+          "caption": "The reference for the face emerging from the wall."
+        },
+        {
+          "type": "paragraph",
+          "text": "Technically, I was working across several connected parts of the environment: material colour and surface appearance, wall damage, ceiling details, lighting and flicker, and the placement of additional forms and props. The C++ maze from Week 1 provided the procedural structure. This week's work focused on developing the conditions of the rooms within that structure."
+        },
+        {
+          "type": "paragraph",
+          "text": "Getting the MCP workflow to work for me depended on making the feedback more specific. A broad request to make a room look degraded left a lot open to interpretation. Checking each result and describing the particular thing that needed to change made the process much more useful."
+        },
+        {
+          "type": "heading",
+          "text": "Building the Shrine"
+        },
+        {
+          "type": "paragraph",
+          "text": "For the shrine, I generated an asset in Tripo and brought it into the environment. I have also taken some inspiration from Warhammer 40K and Doom (2016). The shrine and candles belong to the most heavily degraded room. This is where the project starts moving further into its own fiction: something has happened in this space, but I am not explaining what it is yet."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/shrine generated on tripo.png",
+          "alt": "Shrine asset generated in Tripo, with candles and dark organic forms around its base",
+          "caption": "The shrine asset I generated in Tripo before bringing it into the environment."
+        },
+        {
+          "type": "heading",
+          "text": "Walking Through the Current Maze"
+        },
+        {
+          "type": "paragraph",
+          "text": "The following GIFs show the current result. The sequence begins in the well-lit rooms and moves through increasingly damaged spaces before returning to the ordinary maze. Walking through them helped me judge how the different conditions worked together."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/FinalResult1.gif",
+          "alt": "Walking through the well-lit normal rooms of the procedural Backrooms maze",
+          "caption": "1. Walking through the well-lit rooms, establishing the ordinary version of the space."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/FinalResult2.gif",
+          "alt": "Moving into a worn Backrooms room with wall damage, hanging ceiling elements, and flickering lights",
+          "caption": "2. Moving into a slightly scuffed room, with damaged walls, hanging ceiling elements, and flickering lights."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/FinalResult3.gif",
+          "alt": "Walking through the dark, ordinary rooms of the connected Backrooms maze",
+          "caption": "3. Moving through the maze of ordinary rooms, where the similar spaces make it easy to lose your sense of direction."
+        },
+        {
+          "type": "paragraph",
+          "text": "The maze is still an important part of the experience. Repeated walls, openings, and turns make it difficult to build a clear picture of the space. The different room conditions give that repetition another layer of uncertainty."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/FinalResult4.gif",
+          "alt": "Running through several connected rooms in the procedurally generated maze",
+          "caption": "4. Running through the connected rooms to show the maze layout and the procedural structure of the environment."
+        },
+        {
+          "type": "paragraph",
+          "text": "In the most degraded rooms, the environment becomes much more bodily. Gore spreads across the walls and ceiling, with bones and intestines hanging into the space. The face emerging from the wall adds another uncomfortable detail to an otherwise familiar surface."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/FinalResult5.gif",
+          "alt": "Entering a heavily degraded Backrooms room with gore extending across the ceiling",
+          "caption": "5. Entering the gore-filled rooms, where the ceiling and walls take on a much more disturbing appearance."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/FinalResult6.gif",
+          "alt": "A face emerging from the wall beside gore in a heavily degraded Backrooms room",
+          "caption": "6. The face emerging from the wall, surrounded by the gore in the most degraded room."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/FinalResult7.gif",
+          "alt": "The first view of the shrine and candles in a dark Backrooms room",
+          "caption": "7. The first look at the shrine and candles."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/FinalResult8.gif",
+          "alt": "Moving closer to the shrine and candles in the most heavily degraded Backrooms room",
+          "caption": "8. Moving closer to the shrine and its candles."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/FinalResult9.gif",
+          "alt": "Another view of the shrine and candle arrangement in the dark Backrooms room",
+          "caption": "9. Another view of the shrine and candles."
+        },
+        {
+          "type": "paragraph",
+          "text": "The sequence ends by returning to the ordinary office maze. I like this part of the idea because the environment seems to carry on as if nothing has happened. The normal rooms are still there, but they feel different after moving through the others."
+        },
+        {
+          "type": "image",
+          "src": "assets/week2/FinalResult10.gif",
+          "alt": "Running through the normal Backrooms corridors again after visiting the degraded rooms",
+          "caption": "10. Back to the ordinary liminal space, as if everything is normal again."
+        },
+        {
+          "type": "heading",
+          "text": "Where I Want to Take This"
+        },
+        {
+          "type": "paragraph",
+          "text": "This week helped me develop a way of working between visual references, the MCP connection, and the scene in Unreal. The results improved through a lot of small corrections. The failed attempts were useful because they made me more precise about what I wanted the next version to do."
+        },
+        {
+          "type": "paragraph",
+          "text": "I want to keep developing the relationship between the three room conditions and how unexpectedly the player encounters them. The monster is the next part of that exploration, and I will reveal more about its role in the next post. For now, the maze is beginning to feel like a place whose ordinary appearance cannot always be trusted."
+        }
+      ]
     }
   ]
 }
