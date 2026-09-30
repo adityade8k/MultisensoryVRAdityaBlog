@@ -52,9 +52,15 @@ Each post follows this shape:
 }
 ```
 
-Supported content block types are `paragraph`, `heading`, `image`, `quote`, `video`, and `link`. Unknown types are safely ignored.
+Supported content block types are `paragraph`, `heading`, `image`, `gallery`, `quote`, `video`, and `link`. Unknown types are safely ignored.
 
 Animated GIFs use the `image` content type. They autoplay without controls when loaded, and images are lazy-loaded as they approach the viewport.
+
+Use a `gallery` block for related secondary views. It takes an `images` array with the same `src`, `alt`, and `caption` fields as an image block. Galleries have two columns on desktop and one on mobile, preserving each image's aspect ratio. Image entries can also include `width` and `height` to reserve space while loading.
+
+Post images and gallery images open in an image viewer, with an **Open original** link. Set `originalSrc` when `src` is an optimized copy. Close the viewer with its button or Escape to return to the same place in the post. For an uncropped, expandable cover, add `coverAlt`, with optional `coverCaption`, `coverWidth`, and `coverHeight`, to the post.
+
+Week 3 uses animated web copies in `assets/week3/web/`; the original images and GIFs remain in `assets/week3/`. The screen recording is intentionally excluded from the post.
 
 ## Publish on GitHub Pages
 

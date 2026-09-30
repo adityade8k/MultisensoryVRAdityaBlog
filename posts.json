@@ -397,6 +397,300 @@
           "text": "I want to keep developing the relationship between the three room conditions and how unexpectedly the player encounters them. The monster is the next part of that exploration, and I will reveal more about its role in the next post. For now, the maze is beginning to feel like a place whose ordinary appearance cannot always be trusted."
         }
       ]
+    },
+    {
+      "id": "week-03",
+      "title": "Week 3 — Backrooms: Lighting, Degradation, and Worshippers",
+      "date": "2026-09-30",
+      "coverImage": "assets/week3/web/shrine and worhippers first lok.gif",
+      "coverAlt": "Approaching two worshippers beside a candlelit shrine, then moving around the figures and the gore-covered doorway.",
+      "coverCaption": "Approaching the worshippers and their shrine from the corridor.",
+      "coverWidth": 520,
+      "coverHeight": 520,
+      "preview": "This week, I continued working on the lighting and different stages of degradation in the Backrooms, brought volumetric worshippers into the shrine areas, and got a clearer sense of how to work with the coding agent.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "This week, I continued working on the overall look of the Backrooms. Most of the work was around lighting, the different stages of degradation, and bringing characters into the space. I also started getting a better sense of what the coding agent is useful for, and where it makes more sense to give it existing assets to work with."
+        },
+        {
+          "type": "heading",
+          "text": "Lighting and the overall look"
+        },
+        {
+          "type": "paragraph",
+          "text": "One of the biggest changes this week was switching to baked lighting. This improved performance significantly, and I also felt that it made the whole scene look better. The lighting helped bring out the materials and made the differences between the cleaner and more degraded rooms much more apparent."
+        },
+        {
+          "type": "image",
+          "src": "assets/week3/updated look .png",
+          "alt": "Clean Backrooms interior with yellow-green patterned wallpaper, brown carpet, fluorescent ceiling lights, and a sequence of open doorways.",
+          "caption": "The updated look of the cleaner rooms.",
+          "width": 1335,
+          "height": 803
+        },
+        {
+          "type": "gallery",
+          "images": [
+            {
+              "src": "assets/week3/web/Updated Look1.gif",
+              "alt": "Moving through clean yellow-green rooms with patterned wallpaper, brown carpet, and lit ceiling panels.",
+              "caption": "The updated lighting in the cleaner rooms.",
+              "originalSrc": "assets/week3/Updated Look1.gif",
+              "width": 520,
+              "height": 520
+            },
+            {
+              "src": "assets/week3/web/updated look2.gif",
+              "alt": "A moving view around clean partitions and a square column beneath fluorescent ceiling lights.",
+              "caption": "Another view of the lighting across the walls and floor.",
+              "originalSrc": "assets/week3/updated look2.gif",
+              "width": 520,
+              "height": 520
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "I continued adjusting the walls, floors, and the way the wear builds up across the rooms. I wanted to be able to see the progression from a relatively clean room to one that feels worn out, and eventually to something much more disturbing."
+        },
+        {
+          "type": "heading",
+          "text": "Moving through the degradation"
+        },
+        {
+          "type": "paragraph",
+          "text": "I also reworked the map to improve the layout, lighting, and the spaces between rooms. I didn’t want the different conditions to feel like separate examples placed next to each other. I wanted them to become part of the experience of moving through the maze."
+        },
+        {
+          "type": "gallery",
+          "images": [
+            {
+              "src": "assets/week3/worn out updated.png",
+              "alt": "A corridor with marked wallpaper, missing ceiling tiles, hanging cables, and small pieces of debris on the floor.",
+              "caption": "The worn rooms retain the same wallpaper and carpet, with damage starting to show.",
+              "width": 1335,
+              "height": 803
+            },
+            {
+              "src": "assets/week3/web/worn out updated 1.gif",
+              "alt": "Moving around a column in a worn room with stained walls and damaged ceiling panels.",
+              "caption": "A closer look around the worn room.",
+              "originalSrc": "assets/week3/worn out updated 1.gif",
+              "width": 520,
+              "height": 520
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The idea is that you move from clean rooms into dirty, worn-out spaces, then into rooms filled with gore, and eventually back into something that looks almost normal. It isn’t a straightforward progression where every room is worse than the last. The space keeps changing, and returning to a clean room after seeing something disturbing is also part of the experience."
+        },
+        {
+          "type": "gallery",
+          "images": [
+            {
+              "src": "assets/week3/web/worn ut corridors.gif",
+              "alt": "Moving through stained corridors toward a doorway, with a shrine area visible in the distance.",
+              "caption": "Worn corridors connecting the rooms.",
+              "originalSrc": "assets/week3/worn ut corridors.gif",
+              "width": 520,
+              "height": 520
+            },
+            {
+              "src": "assets/week3/web/messed up corridors.gif",
+              "alt": "Turning between corridors with marked walls, exposed ceiling gaps, and debris on the carpet.",
+              "caption": "Turns and doorways in another worn section.",
+              "originalSrc": "assets/week3/messed up corridors.gif",
+              "width": 520,
+              "height": 520
+            },
+            {
+              "src": "assets/week3/worn out detail.png",
+              "alt": "A damaged room with large dark tears in the wall covering, a peeling column, missing ceiling panels, and stained carpet.",
+              "caption": "Larger tears and stains in a more degraded room.",
+              "width": 1335,
+              "height": 803
+            },
+            {
+              "src": "assets/week3/web/gore and messed up walls.gif",
+              "alt": "Moving around a damaged column and torn wall surfaces beneath exposed ceiling gaps and hanging cables.",
+              "caption": "Moving through the room with torn walls and dark floor stains.",
+              "originalSrc": "assets/week3/gore and messed up walls.gif",
+              "width": 520,
+              "height": 520
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The transitions are more gradual now. There is more of a sense of the wear building up across the space, although I’m still working on how these different areas connect."
+        },
+        {
+          "type": "heading",
+          "text": "Reworking the gore"
+        },
+        {
+          "type": "paragraph",
+          "text": "The gore wasn’t working that well in the previous version. This week, I brought in assets I found online and used the coding agent to help integrate them into the scene. Having those assets to work with helped me get closer to the look I wanted."
+        },
+        {
+          "type": "gallery",
+          "images": [
+            {
+              "src": "assets/week3/gore detail 1.png",
+              "alt": "Red fleshy masses and hanging strands cover the upper walls around two doorways beneath damaged ceiling panels.",
+              "caption": "Gore arranged around the doorways and ceiling.",
+              "width": 1335,
+              "height": 803
+            },
+            {
+              "src": "assets/week3/gore detaisl.png",
+              "alt": "Close view of glossy red gore and hanging strands across a wall corner and doorway.",
+              "caption": "The wall and doorway details at closer range.",
+              "width": 1335,
+              "height": 803
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "I worked on the gore elements across the rooms and corridors, as well as the details around the shrines. I also improved the lighting in the shrine room so that the shrine and the figures around it were easier to read within the space."
+        },
+        {
+          "type": "image",
+          "src": "assets/week3/web/shrine detaisl.gif",
+          "alt": "Moving around a dark sculptural shrine lit by candles, showing its base and nearby worshippers.",
+          "caption": "The candlelit shrine and the details around its base.",
+          "originalSrc": "assets/week3/shrine detaisl.gif",
+          "width": 520,
+          "height": 520
+        },
+        {
+          "type": "gallery",
+          "images": [
+            {
+              "src": "assets/week3/face detail.png",
+              "alt": "A pale face protrudes from patterned wallpaper beside a large dark tear in the wall covering.",
+              "caption": "A face set into the wallpaper beside a torn section of wall.",
+              "width": 1335,
+              "height": 803
+            },
+            {
+              "src": "assets/week3/web/face reveal.gif",
+              "alt": "The camera rounds a partition and approaches a face protruding from the wallpaper.",
+              "caption": "The wall face comes into view around a corner.",
+              "originalSrc": "assets/week3/face reveal.gif",
+              "width": 520,
+              "height": 520
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Figuring out what the agent is good at"
+        },
+        {
+          "type": "paragraph",
+          "text": "Working on this project has also helped me understand where the coding agent is useful. In my experience so far, it is good at composition, procedural systems, and putting things together. It has been useful for creating level layouts, setting up mechanics, and arranging existing elements within the scene."
+        },
+        {
+          "type": "paragraph",
+          "text": "Modeling and texturing have been much less successful. When I asked it to create assets from scratch, especially the gore, the results weren’t really getting close to what I had in mind. I could keep describing what was wrong and asking for changes, but that didn’t necessarily lead to a better-looking asset."
+        },
+        {
+          "type": "paragraph",
+          "text": "I found it more useful to give it actual models and textures at a suitable resolution, and then ask it to work with those. That gave it something concrete to place, repeat, and compose within the environment."
+        },
+        {
+          "type": "image",
+          "src": "assets/week3/web/gore detaisl 2.gif",
+          "alt": "Moving close to red gore clustered along a doorway and ceiling, with strands hanging into the opening.",
+          "caption": "The resulting gore arrangement around a doorway.",
+          "originalSrc": "assets/week3/gore detaisl 2.gif",
+          "width": 520,
+          "height": 520
+        },
+        {
+          "type": "paragraph",
+          "text": "For this project, that division of work has made more sense: I choose the assets and the visual direction, and use the agent to help integrate them, build procedural variations, and set up the level and its behavior. It is something I want to keep in mind as I continue working, because a lot of the earlier iteration was spent asking it to make things that it wasn’t particularly good at making."
+        },
+        {
+          "type": "heading",
+          "text": "Bringing in the worshippers"
+        },
+        {
+          "type": "paragraph",
+          "text": "This week, I also brought volumetric captures into the project. There are now a couple of worshippers around the shrines, caught in a trance."
+        },
+        {
+          "type": "image",
+          "src": "assets/week3/volumetric cpature.png",
+          "alt": "A captured human figure in a dark shirt and jeans stands with arms extended in a gray 3D viewport.",
+          "caption": "A volumetric capture viewed on its own before placement in the environment.",
+          "width": 725,
+          "height": 726
+        },
+        {
+          "type": "paragraph",
+          "text": "You encounter them while moving through the space, but they don’t attack you or respond to your presence. They are just there, continuing to worship. I’m thinking of them as people who have been trapped in this place for so long that they have gone mad, and this is what they have ended up doing."
+        },
+        {
+          "type": "paragraph",
+          "text": "Adding them changes how the rooms feel. The space is no longer completely empty, but finding other people doesn’t really make it feel any less unsettling. They are present, but there isn’t much you can do for them or with them."
+        },
+        {
+          "type": "gallery",
+          "images": [
+            {
+              "src": "assets/week3/character detaisl.png",
+              "alt": "Two worshippers hold their hands together beside a candle stand and a gore-covered doorway, with a red-shirted figure in front.",
+              "caption": "The two worshippers beside the doorway.",
+              "width": 1335,
+              "height": 803
+            },
+            {
+              "src": "assets/week3/character and shrine 2.png",
+              "alt": "A close side view of the worshippers facing a dark shrine surrounded by candles.",
+              "caption": "The figures facing the candlelit shrine.",
+              "width": 1335,
+              "height": 803
+            },
+            {
+              "src": "assets/week3/characters and shrine 3.png",
+              "alt": "The shrine on the left and two worshippers on the right, with red gore across the doorway behind them.",
+              "caption": "The shrine, figures, and doorway seen together.",
+              "width": 1335,
+              "height": 803
+            },
+            {
+              "src": "assets/week3/web/worhipers detaisl.gif",
+              "alt": "A close moving view of the two worshippers with their hands held together beside the candles.",
+              "caption": "A closer view of the worshippers in the room.",
+              "originalSrc": "assets/week3/worhipers detaisl.gif",
+              "width": 520,
+              "height": 520
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Where it is now"
+        },
+        {
+          "type": "paragraph",
+          "text": "The project is starting to come together more as a space you move through. The baked lighting improved both the performance and the overall look, the degradation is more visible and gradual, and the gore and worshippers give the shrine areas more of a presence."
+        },
+        {
+          "type": "paragraph",
+          "text": "I also have a clearer idea of how I want to work with the coding agent. Giving it better source assets has been more useful than repeatedly asking it to generate the visual details from scratch."
+        },
+        {
+          "type": "paragraph",
+          "text": "Next, I want to keep refining the movement between the different room conditions: how a room starts to feel wrong, how that builds up, and what it feels like to suddenly find yourself somewhere clean again."
+        }
+      ],
+      "coverOriginalSrc": "assets/week3/shrine and worhippers first lok.gif"
     }
   ]
 }

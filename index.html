@@ -55,6 +55,18 @@
       </div>
     </dialog>
 
+    <dialog class="image-viewer" id="image-viewer" aria-labelledby="image-viewer-title">
+      <div class="image-viewer__toolbar">
+        <span id="image-viewer-title">Image detail</span>
+        <a id="image-viewer-original" target="_blank" rel="noopener noreferrer">Open original ↗</a>
+        <button id="image-viewer-close" type="button">Close <span aria-hidden="true">×</span></button>
+      </div>
+      <figure>
+        <img id="image-viewer-image" alt="">
+        <figcaption id="image-viewer-caption"></figcaption>
+      </figure>
+    </dialog>
+
     <template id="post-card-template">
       <article class="post-card">
         <button class="post-card__button" type="button">

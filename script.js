@@ -5,8 +5,14 @@ const modal = document.querySelector("#post-modal");
 const modalPanel = modal.querySelector(".post-modal__panel");
 const modalClose = document.querySelector("#modal-close");
 const postDetail = document.querySelector("#post-detail");
+const imageViewer = document.querySelector("#image-viewer");
+const viewerImage = document.querySelector("#image-viewer-image");
+const viewerCaption = document.querySelector("#image-viewer-caption");
+const viewerOriginal = document.querySelector("#image-viewer-original");
+const viewerClose = document.querySelector("#image-viewer-close");
 
 let lastFocusedElement = null;
+let lastImageTrigger = null;
 
 const fallbackImage = `data:image/svg+xml,${encodeURIComponent(`
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200">
@@ -58,6 +64,50 @@ function isSafeUrl(value, allowLocal = false) {
   }
 }
 
+function openImage(block, trigger) {
+  lastImageTrigger = trigger;
+  viewerImage.src = block.src;
+  viewerImage.alt = block.alt || block.caption || "Blog post image";
+  viewerCaption.textContent = block.caption || "";
+  viewerCaption.hidden = !block.caption;
+  viewerOriginal.href = isSafeUrl(block.originalSrc, true) ? block.originalSrc : block.src;
+  imageViewer.showModal();
+  viewerClose.focus();
+}
+
+function closeImage() {
+  if (!imageViewer.open) return;
+  imageViewer.close();
+  viewerImage.removeAttribute("src");
+  lastImageTrigger?.focus({ preventScroll: true });
+}
+
+function createImageFigure(block) {
+  if (!isSafeUrl(block.src, true)) return null;
+  const figure = document.createElement("figure");
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "media-expand";
+  const alt = block.alt || block.caption || "Blog post image";
+  button.setAttribute("aria-label", `Enlarge image: ${alt}`);
+  button.setAttribute("aria-haspopup", "dialog");
+  const image = createImage(block.src, alt);
+  if (block.width && block.height) {
+    image.width = block.width;
+    image.height = block.height;
+  }
+  const hint = document.createElement("span");
+  hint.className = "media-expand__hint";
+  hint.textContent = "Enlarge ↗";
+  hint.setAttribute("aria-hidden", "true");
+  button.append(image, hint);
+  button.addEventListener("click", () => openImage(block, button));
+  figure.append(button);
+  const caption = createCaption(block.caption);
+  if (caption) figure.append(caption);
+  return figure;
+}
+
 function renderContentBlock(block) {
   if (!block || typeof block !== "object") return null;
 
@@ -75,12 +125,18 @@ function renderContentBlock(block) {
     }
 
     case "image": {
-      if (!isSafeUrl(block.src, true)) return null;
-      const figure = document.createElement("figure");
-      figure.append(createImage(block.src, block.alt || block.caption || "Blog post image"));
-      const caption = createCaption(block.caption);
-      if (caption) figure.append(caption);
-      return figure;
+      return createImageFigure(block);
+    }
+
+    case "gallery": {
+      const gallery = document.createElement("div");
+      gallery.className = "post-gallery";
+      (Array.isArray(block.images) ? block.images : []).forEach((item) => {
+        if (!item || typeof item !== "object") return;
+        const figure = createImageFigure(item);
+        if (figure) gallery.append(figure);
+      });
+      return gallery.childElementCount ? gallery : null;
     }
 
     case "quote": {
@@ -97,6 +153,7 @@ function renderContentBlock(block) {
       const video = document.createElement("video");
       video.src = block.src;
       video.controls = true;
+      video.playsInline = true;
       video.preload = "metadata";
       if (block.poster && isSafeUrl(block.poster, true)) video.poster = block.poster;
       video.setAttribute("aria-label", block.caption || "Blog post video");
@@ -148,9 +205,23 @@ function renderPost(post) {
 
   header.append(label, date, title);
 
-  const cover = createImage(post.coverImage, post.title);
-  cover.className = "post-detail__cover";
-  cover.loading = "eager";
+  let cover;
+  if (post.coverAlt) {
+    cover = createImageFigure({
+      src: post.coverImage,
+      originalSrc: post.coverOriginalSrc,
+      alt: post.coverAlt,
+      caption: post.coverCaption,
+      width: post.coverWidth,
+      height: post.coverHeight
+    });
+    cover.className = "post-detail__cover-figure";
+    cover.querySelector("img").loading = "eager";
+  } else {
+    cover = createImage(post.coverImage, post.title);
+    cover.className = "post-detail__cover";
+    cover.loading = "eager";
+  }
 
   const content = document.createElement("div");
   content.className = "post-content";
@@ -174,6 +245,7 @@ function openPost(post, trigger) {
 
 function closePost() {
   if (!modal.open) return;
+  closeImage();
   modal.close();
   document.body.classList.remove("modal-open");
   postDetail.replaceChildren();
@@ -188,7 +260,8 @@ function renderCard(post, index) {
   const date = fragment.querySelector(".post-card__date");
 
   image.src = post.coverImage || fallbackImage;
-  image.alt = post.title;
+  image.alt = post.coverAlt || post.title;
+  if (post.coverAlt) image.classList.add("post-card__image--contain");
   image.addEventListener("error", () => {
     image.src = fallbackImage;
   }, { once: true });
@@ -237,6 +310,15 @@ modal.addEventListener("cancel", (event) => {
 });
 modal.addEventListener("click", (event) => {
   if (event.target === modal) closePost();
+});
+
+viewerClose.addEventListener("click", closeImage);
+imageViewer.addEventListener("cancel", (event) => {
+  event.preventDefault();
+  closeImage();
+});
+imageViewer.addEventListener("click", (event) => {
+  if (event.target === imageViewer) closeImage();
 });
 
 loadPosts();
